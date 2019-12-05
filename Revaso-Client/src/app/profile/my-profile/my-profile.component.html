@@ -1,0 +1,47 @@
+<div class="container-fluid" *ngIf="!myProfile">
+    <h3> Fetching your profile...</h3>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+</div>
+
+<div class="container-fluid" *ngIf="myProfile">
+    <div class="container-fluid col-lg-12">
+            <div class="col-lg-12">
+                <div class="card">
+                   <div class="card-title sans">
+    
+                </div> 
+                    <div class="card-body pacifico">
+                        <img class="rounded-circle" style="height: 200px; width:200px;" [src]="image" alt="your profile image">
+                        <p> "{{myProfile.userName}}"</p>
+                        <div></div>
+                        <span> {{myProfile.fName}} {{myProfile.lName}}</span>
+                        <p> {{myProfile.email}}</p> 
+                
+                    </div>
+                    <div class="card-footer">
+                        <!-- <label class="btn btn-default">
+
+                            <input type="file" (change)="selectFile($event)">
+                        </label>
+                        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button> -->
+                        <a class="nav-link" routerLinkActive="active"
+                            routerLink="/editProfile">Edit Profile</a>
+                    
+                    </div>
+                </div>
+    
+            </div>
+            <div class="col-lg-12">
+                <app-post [post]="post" *ngFor="let post of myPosts"></app-post>
+            </div>
+    </div>
+        
+</div>
+<!-- <div class="col-lg-12">
+    <mat-progress-bar mode='indeterminate'></mat-progress-bar>
+
+</div> -->

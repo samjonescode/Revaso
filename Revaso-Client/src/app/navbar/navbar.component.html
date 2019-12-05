@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand pacifico" style="color:red;">RevaSo</a>
+      </div>    
+            <ul class="nav nav-tabs mr-auto">
+                    <li class="nav-item" *ngIf="loggedIn"><a routerLink="/search"
+                   routerLinkActive="active" class="nav-link">Search</a></li> 
+                    <li *ngIf="loggedIn"><a class="nav-link" routerLinkActive="active"
+                        routerLink="/myprofile">My Profile</a>
+                </li>
+                <li *ngIf="loggedIn"><a class="nav-link" routerLinkActive="active"
+                    routerLink="/newpost">New Post</a>
+            </li>
+            <!-- <li *ngIf="loggedIn"><a class="nav-link" routerLinkActive="active"
+              routerLink="/editProfile">Edit Profile</a>
+      </li> -->
+     
+        <li *ngIf="loggedIn"> <a class="nav-link" routerLinkActive="active" routerLink="/feed">Feed</a></li>
+        <li (click)="onLogout()" *ngIf="loggedIn"><a class="nav-link" routerLinkActive="active"
+            routerLink="/login">Logout</a>
+    </li>
+            </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

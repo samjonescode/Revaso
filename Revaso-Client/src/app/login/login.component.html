@@ -1,0 +1,15 @@
+<div class="container-fluid col-lg-12">
+    <div class="jumbotron border"> Hello, please login.
+     
+    </div>
+    <form class="form-container col-lg-6" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="form-group">
+            <input type="text"  formControlName="userName" name="userName" class="form-control" placeholder="username" required/>
+            <br>
+            <input type="password"  formControlName="userPassword" name="userPassword" class="form-control" placeholder="password" required/>
+            <br>
+                <input type="submit" value="Login" class="form-control btn btn-primary col-lg-3"/> 
+        </div>
+        </form>
+        </div>
+        

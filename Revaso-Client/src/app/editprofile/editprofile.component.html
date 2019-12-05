@@ -1,0 +1,37 @@
+<form #editForm="ngForm" (ngSubmit)="editProfile(newProfile)">
+
+        <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" class="form-control" name="userName" placeholder="{{profile.userName}}" [(ngModel)]="newProfile.userName" required>
+        </div>
+
+    <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" class="form-control" name="fName" placeholder="{{profile.fName}}" [(ngModel)]="newProfile.fName" required>
+    </div>
+   
+
+    <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" name="lName"  class="form-control" placeholder="{{profile.lName}}" [(ngModel)]="newProfile.lName" required>
+        
+        </div>
+  
+    <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" name="email"  class="form-control" placeholder="{{profile.email}}" [(ngModel)]="newProfile.email" required>
+        
+        </div>
+        <!-- <div class="form-group">
+            <label for="">Profile Image URL</label>
+            <input name="profileImage" type="text" class="form-control" [(ngModel)]="newProfile.profileImage">
+        </div> -->
+        
+    <div class="form-group">
+            <label for="">City</label>
+            <input type="text" name="city"  class="form-control" placeholder="{{profile.city}}" [(ngModel)]="newProfile.city" required>
+        
+        </div>
+    <input type="submit" class="btn btn-success" [disabled]="!editForm.valid" value="Done">
+</form>
+

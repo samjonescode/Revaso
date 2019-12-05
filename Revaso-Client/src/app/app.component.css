@@ -1,0 +1,18 @@
+* {
+    text-align: center;
+}
+/* app-navbar {
+    display: inline-block;
+} */
+form >input{
+    text-align: center;
+}
+input {
+    display:inline-block;
+}
+app-landingnav {
+    display: inline-block;
+}
+#landing-container{
+    text-align: center;
+}

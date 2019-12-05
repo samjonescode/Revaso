@@ -1,0 +1,43 @@
+
+<div class="col-lg-10container" style="text-align: center;">
+    <!-- <button class="btn btn-primary" id="clickVoice"> Voice to Text </button> -->
+
+    <form class="form" (ngSubmit)="onSubmit()"  
+    [formGroup]='newPostForm'
+    >
+    <input 
+    style="display:inline-block;"
+    formControlName="postTitle"
+    type="text" name='post-title' id="post-title" class="form-control col-lg-8" placeholder='post-title'  required>
+    <br>
+    <span class="help-block alert alert-warning" 
+    *ngIf="!newPostForm.get('postTitle').valid && newPostForm.get('postTitle').touched">At least 5 letters long.</span>
+    <br>
+    
+    <!-- contenteditable -->
+    <textarea  
+    #editable
+    formControlName="postBody"
+    
+    id="post-body"
+    type="text" name='post-body' class='form-control col-lg-8' placeholder='write post here'  style="width:600px; height:400px; display:inline-block;" required></textarea>
+    <br>
+    <span class="help-block alert alert-warning" 
+    *ngIf="!newPostForm.get('postBody').valid && newPostForm.get('postBody').touched">Required field.</span>
+    
+    <br>
+    <div class="form-group">
+        <label style="margin-right: 20px;" for="">Attach an image: </label>
+        <input formControlName="imagePath" name="profileImage" (change)="uploadFile($event)" type="file">
+    </div>
+    <br>
+    <input type="submit" value="Post" class="btn btn-success col-lg-4" [disabled]="!newPostForm.valid  || newPostForm.pristine">
+
+</form>
+</div>
+<div class="col-lg-6" *ngIf="post">
+    {{post.title}}
+    {{post.author}}
+    {{post.body}}
+</div>
+

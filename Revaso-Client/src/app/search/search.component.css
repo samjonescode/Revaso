@@ -1,0 +1,33 @@
+.ng-valid[required], .ng-valid.required  {
+    border: 2px solid rgb(113, 250, 101); /* green */
+  }
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  /* .ng-invalid:not(form)  {
+    border: 2px solid #a94442; /* red */
+  /* }*/ 
+  
+  .container-fluid {
+    text-align: center;
+    /* display:inline-block; */
+  }
+  .form-container {
+    display: inline-block;
+  }
+  .form-row {
+    text-align: center;
+  }
+
+  .jumbotron {
+    background-color: white;
+    border-width: thick;
+  }
+#overrideBootstrap {
+  border-color: red;
+}
+
+.border {
+  border: 3px solid rgba(255, 0, 0, 0.79)!important;
+}

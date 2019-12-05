@@ -1,0 +1,9 @@
+.form-container {
+    display:inline-block;
+}
+.help-block {
+    height:100px;
+}
+.jumbotron {
+    background-color: inherit;
+}

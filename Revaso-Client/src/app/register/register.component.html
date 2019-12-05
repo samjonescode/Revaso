@@ -1,0 +1,72 @@
+<div class="jumbotron border">
+    Register below 
+</div>
+<div class="container-fluid">
+
+<div class="col-lg-8 form-container">
+    <form [formGroup]='registerForm' (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="">Username</label>
+            <input formControlName="userName" name="userName" type="text" class="form-control">
+        </div>
+        <span class="help-block alert alert-warning" 
+        *ngIf="!registerForm.get('userName').valid && registerForm.get('userName').touched">Required field. Minimum length of 6 required.</span>
+        
+        <div class="form-group">
+            <label for="">Password</label>
+            <input formControlName="userPassword" name="userPassword" type="password" class="form-control">
+        </div>
+        <span class="help-block alert alert-warning" 
+        *ngIf="!registerForm.get('userPassword').valid && registerForm.get('userPassword').touched">Passwords must be 6 characters long.</span>
+
+        
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input formControlName="fName" name="fName" type="text" class="form-control">
+        </div>
+        <span class="help-block alert alert-warning"  
+        *ngIf="!registerForm.get('fName').valid && registerForm.get('fName').touched">First name is required.</span>
+
+        
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input formControlName="lName" name="lName" type="text" class="form-control">
+        </div>
+        <span class="help-block alert alert-warning" 
+        *ngIf="!registerForm.get('lName').valid && registerForm.get('lName').touched">Passwords must be 6 characters long.</span>
+
+        <div class="form-group">
+            <label for="">Email</label>
+                <input formControlName="email" name="email" type="text" class="form-control">
+                <br>
+                <span class="help-block alert alert-warning" 
+                *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">Please enter a valid email.</span>
+          
+            </div>
+                  <div class="form-group">
+                    <label for="">City</label>
+                    <input formControlName="city" name="city" type="text" class="form-control">
+                </div>
+                <span class="help-block alert alert-warning"  
+                *ngIf="!registerForm.get('city').valid && registerForm.get('city').touched">Please enter a valid city.</span>
+                
+                
+                <label for=""> Gender
+                    </label>
+            <div class="radio" *ngFor="let gender of genders">
+                        <input type="radio"
+                        name="gender"
+            formControlName='gender'
+                        [value]="gender">
+                        {{ gender }}
+                </div>
+            <div class="form-group">
+                    <label for="">Profile Image</label>
+                    <!-- <input formControlName="profileImage" name="profileImage" type="text"> -->
+                    <input formControlName="imagePath" name="profileImage" (change)="uploadFile($event)" type="file">
+                </div>
+                <input type="submit" class='btn btn-primary' [disabled]="registerForm.invalid">
+    </form>
+</div>
+
+</div>

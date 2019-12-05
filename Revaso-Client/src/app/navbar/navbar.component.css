@@ -1,0 +1,9 @@
+router-outlet {
+    display: inline-block;
+}
+
+.pacifico {
+    font-family: 'Pacifico', cursive;
+    color: red;
+    font-size: 25px;
+}

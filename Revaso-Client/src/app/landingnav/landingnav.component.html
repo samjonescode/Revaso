@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default" *ngIf="!loggedIn">
+    <div class="container-fluid" id="landing-nav">
+      <div class="navbar-header">
+            <ul class="nav nav-tabs mr-auto">
+                <!-- <li><a class="nav-link" routerLinkActive="active" routerLink="/resetPassword">Reset Password</a></li> -->
+                <li><a class="nav-link" routerLinkActive="active" routerLink="/register">Register </a></li>
+
+                <li><a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a></li>
+                </ul>
+                </div>
+                </div>
+                </nav>
+
+       <router-outlet></router-outlet>

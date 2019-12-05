@@ -1,0 +1,30 @@
+<br>
+<!-- image experiment -->
+<div class="card text-center">
+    <div class="card-header">
+      <div *ngIf="isYourPost"> You </div>
+      
+      <div *ngIf="!isYourPost"> <button class="btn btn-success" (click)="navigateById()"> By {{postAuthor}}</button>   </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.postTitle}}</h5>
+      <div id="post-body" class="card-text">
+
+        <p>{{post.postBody}}</p>
+        <div *ngIf="image!=undefined">
+          <img style="width:240px; height: 200;" [src]="image" alt="">
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="card-footer text-muted">
+        <h4 class="alert-heading"> Likes: {{post.numLikes}}</h4>
+       <button [disabled]="isYourPost" mat-raised-button color="accent"(click)="likePost()">Like</button>
+       <button class="btn btn-primary" (click)="toggleComments()">Comments</button>
+    </div>
+        <app-comment [hidden]="hideComments" [comment]="comment" *ngFor="let comment of comments"></app-comment>
+   </div>
+
+   

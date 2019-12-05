@@ -1,0 +1,25 @@
+<hr>
+<br>
+<div *ngIf="!profile">
+    <h3>No profiles found. Please enter an exact match.</h3>
+</div>
+<div *ngIf="profile">
+
+    <div class="card col-lg-12" (click)="navigateById(profile.userId)">
+        <div class="card-body row">
+            <div class="col-lg-4">
+                <img style="height: 200px; width:200px;" class="rounded-circle" [src]="image" alt="">
+            </div>
+            <div class="col-lg-8">
+                <p>{{profile.userName}}</p>
+                <p>{{profile.fName}}</p>
+                
+                <p>{{profile.lName}}</p>
+                <p>{{profile.email}}</p>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
