@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "@types/crypto-js": "^3.1.43",
-    "aws-sdk": "^2.524.0",
+    "aws-sdk": "^2.814.0",
     "crypto-js": "^3.1.9-1",
     "gmail-send": "^1.8.10",
     "medium-editor": "^5.23.3",
